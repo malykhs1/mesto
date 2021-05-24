@@ -8,4 +8,8 @@
     left: 240px;
     position: absolute;
   }
+
+.element__like:hover {
+  opacity: 50%;
+}
   
