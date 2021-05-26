@@ -1,35 +1,27 @@
 .section {
     box-sizing: border-box;
     margin: 0 auto;
-    padding-top: 45px;
-    padding-left: 200px;
-    padding-right: 200px;
     max-width: 1280px;
   }
 
-
-  @media screen and (max-width: 1279px){
-    .section {  
-      padding-top: 28px;
-      padding-left: 90px;
-      padding-right: 90px;   
-     }
-  }
-
-
   @media screen and (max-width: 1027px){
     .section {  
-      padding-top: 28px;
-      padding-left: 25px;
-      padding-right: 25px;   
+      padding-left: 10px;
+      padding-right: 10px;   
      }
   }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 601px){
     .section {  
-      padding-top: 28px;
-      padding-left: 19px;
-      padding-right: 19px;   
-     }
-  }
+        padding-left: 10px;
+        padding-right: 10px;   
+       }
+      }
 
+
+  @media screen and (max-width: 500px){
+    .section {  
+        padding-left: 19px;
+        padding-right: 19px;   
+       }
+      }

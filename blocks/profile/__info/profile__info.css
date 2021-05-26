@@ -1,11 +1,19 @@
 .profile__info {
+    max-width: 294px;
     display: flex;
     flex-direction: column;
     text-align: inherit;
+    margin-top: 22px;
+    margin-right: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-@media screen and (max-width: 767px){
-    .profile__info {  
-      text-align: center; 
+@media screen and (max-width: 620px){
+.profile__info {  
+    max-width: 189px;
+    margin-right: 0;
+    text-align: center; 
      }
   }

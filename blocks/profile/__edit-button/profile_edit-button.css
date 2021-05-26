@@ -6,29 +6,23 @@
     height: 24px;
     background-color: transparent;
     border: 1px solid white;
-    margin-right: 251px;
-    margin-top: 15px;
-    cursor: pointer;
+    margin-right: auto;
+    margin-top: 37px;
 }
 
 .profile__edit-button:hover {
   opacity: 60%;
+  cursor: pointer;
 }
 
-@media screen and (max-width: 1254px){
-  .profile__edit-button {  
-       margin-right: 100px;
-    }
-  }
 
-@media screen and (max-width: 767px){
-  .profile__edit-button {  
-        position: absolute;
-        margin: 0;
-        margin-left: 240px;
-        margin-top: 155px;
-        width: 7.5px;
-        height: 7.5px;
-        box-sizing: content-box;
+@media screen and (max-width: 620px){
+  .profile__edit-button {
+    position: absolute;
+    margin: 0;
+    margin-left: 230px;
+    margin-top: 150px;
+    width: 18px;
+    height: 18px;
     }
   }

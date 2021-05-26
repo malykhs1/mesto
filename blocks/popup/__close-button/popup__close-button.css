@@ -3,8 +3,8 @@
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
-    left: 420px;
-    bottom: 350px;
+    right: -30px;
+    top: -30px;
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -20,8 +20,8 @@ opacity: 60%;
 @media screen and (max-width: 767px){
     .popup__close-button {  
     width: 26px;
-    left: 256px;
-    bottom: 380px;
+    right: 0px;
+    top: -40px;
          }
   }
     
