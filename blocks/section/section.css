@@ -11,14 +11,7 @@
      }
   }
 
-  @media screen and (max-width: 601px){
-    .section {  
-        padding-left: 10px;
-        padding-right: 10px;   
-       }
-      }
-
-
+ 
   @media screen and (max-width: 500px){
     .section {  
         padding-left: 19px;
