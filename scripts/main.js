@@ -21,8 +21,10 @@ function formSubmitHandler (evt) {
     evt.preventDefault();
     formName.textContent = nameEdit.value; 
     formJob.textContent = jobEdit.value;
-    popup.classList.remove('popup_opened');
-}
+    popupClose();
+    };
+
+
 formElement.addEventListener('submit', formSubmitHandler);
 openPopup.addEventListener('click', popupOpen);
 closePopup.addEventListener('click', popupClose); 
