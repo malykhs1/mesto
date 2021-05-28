@@ -1,8 +1,7 @@
 .profile__info {
-	max-width: 294px;
+	max-width: 336px;
 	display: flex;
 	flex-direction: column;
-	text-align: inherit;
 	margin-top: 22px;
 	margin-right: 18px;
 	text-overflow: ellipsis;
@@ -10,9 +9,16 @@
 	overflow: hidden;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 1023px) {
 	.profile__info {
-		max-width: 189px;
+		max-width: 340px;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 655px) {
+	.profile__info {
+		max-width: 282px;
 		margin-right: 0;
 		text-align: center;
 	}
