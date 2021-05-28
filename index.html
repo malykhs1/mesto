@@ -2,72 +2,66 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="pages/index.css" />
         <title>Mesto</title>
     </head>
-
     <body class="root">
         <header class="header section">
-                <img src="images/logo.svg" alt="Место" class="header__logo">
+            <img src="images/logo.svg" alt="Место" class="header__logo" />
         </header>
-
+        <!--Добрый день, Владимир, спасибо за ревью. Вы правы, я плохо поработал в первый раз. Вы меня замотивировали комментарием, что я могу оказаться в академе. Очень злился на себя, видимо просто был напряжен из-за того, что впервые не уложился в дедлайн, с предыдущей работой разделался с меньшим кол-вом проблем, а тут жестко затупил. Отрефлексировал, все ошибки выписал на листочек, вроде бы все починил, а если нет, то надеюсь, что еще одной итерации мне хватит.-->
         <main class="content">
             <section class="profile section">
-                <img src="images/jac.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
+                <img src="images/jac.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
                 <div class="profile__info">
+                    <!--Не нашел никакого другого решения, кроме использования доп.контейнера, чтобы в мобильной версиии обойтись без абсолютна с кнопкой редактирования-->
                     <div class="profile__name-container">
-                    <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
-                </div>
-                    <p class="profile__job">Исследователь океана</p> 
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
+                    </div>
+                    <p class="profile__job">Исследователь океана</p>
                 </div>
                 <button type="button" class="profile__add-button" aria-label="Загрузить контент"></button>
             </section>
-
             <section class="elements section">
                 <div class="element">
-                    <img class="element__image" src="images/karachay.jpg" alt="Карачаевск">
+                    <img class="element__image" src="images/karachay.jpg" alt="Карачаевск" />
                     <div class="element__info">
                         <h2 class="element__title">Карачаево</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
                     </div>
                 </div>
-
                 <div class="element">
-                    <img class="element__image" src="images/elbrus.jpg" alt="Эльбрус">
+                    <img class="element__image" src="images/elbrus.jpg" alt="Эльбрус" />
                     <div class="element__info">
                         <h2 class="element__title">Гора Эльбрус</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
                     </div>
                 </div>
-
                 <div class="element">
-                    <img class="element__image" src="images/dombay.jpg" alt="Домбай">
+                    <img class="element__image" src="images/dombay.jpg" alt="Домбай" />
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
                     </div>
                 </div>
-
                 <div class="element">
-                    <img class="element__image" src="images/elbrus2.jpg" alt="Гора Эльбрус">
+                    <img class="element__image" src="images/elbrus2.jpg" alt="Гора Эльбрус" />
                     <div class="element__info">
                         <h2 class="element__title">Гора Эльбрус</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
                     </div>
                 </div>
-
                 <div class="element">
-                    <img class="element__image" src="images/dombay.jpg" alt="Домбай">
+                    <img class="element__image" src="images/dombay.jpg" alt="Домбай" />
                     <div class="element__info">
                         <h2 class="element__title">Домбай</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
                     </div>
                 </div>
-
                 <div class="element">
-                    <img class="element__image" src="images/karachay.jpg" alt="Карачаевск">
+                    <img class="element__image" src="images/karachay.jpg" alt="Карачаевск" />
                     <div class="element__info">
                         <h2 class="element__title">Карачаево-Черкессия</h2>
                         <button type="button" class="element__like" aria-label="Поставить лайк"></button>
@@ -77,20 +71,19 @@
             <footer class="footer section">
                 <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
             </footer>
-
             <section class="popup">
+                <!--Научился пользоваться пиксельперфектом, вроде бы практически идеально, чуть-чуть может не сходятся инпуты, но вроде бы небольшая погрешность допустима-->
                 <div class="popup__container">
                     <button type="button" class="popup__close-button" aria-label="Закрыть попап"></button>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <form class="popup__profile-edit">
-                        <input class="popup__input" type="text" name="name" id="input_name">
-                        <input class="popup__input" type="text" name="job" id="input_job">
-                        <button type="submit" class="popup__save-button">Сохранить</button> 
+                        <input class="popup__input" type="text" name="name" id="input_name" />
+                        <input class="popup__input" type="text" name="job" id="input_job" />
+                        <button type="submit" class="popup__save-button">Сохранить</button>
                     </form>
                 </div>
             </section>
         </main>
         <script src="scripts/main.js"></script>
-</body>
+    </body>
 </html>
-
