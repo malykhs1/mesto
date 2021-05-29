@@ -18,7 +18,7 @@
         }
     }
 
-    @media (min-width: 550px) and (max-width: 600px) {
+    @media (min-width: 540px) and (max-width: 600px) {
         .element {
             margin: 10px;
         }
