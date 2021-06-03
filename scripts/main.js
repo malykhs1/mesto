@@ -74,7 +74,7 @@ function initialCardElement(element) {
         evt.target.classList.toggle('card__like_active'); // функция, которая реагирует на нажатие и переключает сердчеко
         });
       cardDeleteListeners(cardElement);
-      cardList.append(cardElement); //все данные из константы cardTemplate добавляем сразу после elements
+      cardList.prepend(cardElement); //все данные из константы cardTemplate добавляем сразу после elements
   };
 
 
@@ -93,7 +93,6 @@ function initialCardElement(element) {
     const cardAdd = initialCardElement({name:photoNameEdit.value, link:photoLinkEdit.value});
     photoNameEdit.value = '';
     photoLinkEdit.value = '';
-    cardList.append(cardAdd);
     popupPhotoClose();
     };
 
