@@ -1,0 +1,23 @@
+.popup-photo__input {
+    width: 358px;
+    margin-top: 54px;
+    margin-left: 36px;
+    border: 0;
+    border-bottom:1px solid #eee;
+    font-size: 14px;
+    padding-bottom: 13px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 767px){
+    .popup-photo__input {  
+    max-width: 238px;
+    margin-top: 75px;
+    margin-left: 22px;
+     }
+  }
+
+  .popup-photo__input:last-of-type {
+    margin-top: 30px;
+  }
+  

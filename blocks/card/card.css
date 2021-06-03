@@ -1,4 +1,4 @@
-.element {
+.card {
     width: 100%;
     max-width: 282px;
     min-height: 361px;
@@ -13,13 +13,13 @@
     }
 
     @media (min-width: 800px) and (max-width: 900px) {
-        .element {
+        .card {
             max-width: 250px;
         }
     }
 
     @media (min-width: 540px) and (max-width: 600px) {
-        .element {
+        .card {
             margin: 10px;
         }
     }
