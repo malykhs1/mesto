@@ -50,7 +50,6 @@ function formSubmitProfile (evt) { //делаем так, чтобы данны�
     cardLink.src = photoLinkEdit.value;
     popupPhotoClose(); // закроем попап при выполнении функции
     }; 
-    formCardElement.addEventListener('submit', formSubmitCard);
 
 
 const cardList = document.querySelector('.elements'); // элемент, в который нужно будет встроить наш template
