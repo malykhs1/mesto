@@ -30,14 +30,14 @@
             <footer class="footer section">
                 <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
             </footer>
-            <section class="popup">
-                <div class="popup__container">
-                    <button type="button" class="popup__close-button" aria-label="Закрыть попап"></button>
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <form name="form-edit-profile" class="popup__profile-edit">
-                        <input class="popup__input" type="text" name="name" id="input_name" />
-                        <input class="popup__input" type="text" name="job" id="input_job" />
-                        <button type="submit" class="popup__save-button">Сохранить</button>
+            <section class="popup-profile">
+                <div class="popup-profile__container">
+                    <button type="button" class="popup-profile__close-button" aria-label="Закрыть попап"></button>
+                    <h2 class="popup-profile__title">Редактировать профиль</h2>
+                    <form name="form-edit-profile" class="popup-profile__profile-edit">
+                        <input class="popup-profile__input" type="text" name="name" id="input_name" />
+                        <input class="popup-profile__input" type="text" name="job" id="input_job" />
+                        <button type="submit" class="popup-profile__save-button">Сохранить</button>
                     </form>
                 </div>
             </section>
@@ -49,10 +49,20 @@
                     <form name="form-edit-photo" class="popup-photo__edit">
                         <input class="popup-photo__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
                         <input class="popup-photo__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
-                        <button type="submit" class="popup-photo__save-button">Сохранить</button>
+                        <button type="submit" class="popup-photo__save-button">Создать</button>
                     </form>
                 </div>
             </section>
+            <section class="popup-photo-click">   
+                <div class="popup-photo-click__container">
+                        <button type="button" class="popup-photo-click__close-button" aria-label="Закрыть попап"></button>
+                        <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup-photo-click__image"> 
+                        <h2 class="popup-photo-click__title">Архыз</h2>
+                        </form>
+                    </div>
+                </section>
+
+
         </main>
         <template class="card-template">
             <div class="card">
