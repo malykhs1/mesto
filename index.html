@@ -1,84 +1,75 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="pages/index.css" />
-        <title>Mesto</title>
-    </head>
-    <body class="root">
-        <header class="header section">
-            <img src="images/logo.svg" alt="Место" class="header__logo" />
-        </header>
-        <main class="content">
-            <section class="profile section">
-                <img src="images/jac.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
-                <div class="profile__info">
-                    <div class="profile__name-container">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
-                    </div>
-                    <p class="profile__job">Исследователь океана</p>
-                </div>
-                <button type="button" class="profile__add-button" aria-label="Загрузить контент"></button>
-            </section>
-
-            <section class="elements section">
-
-            </section>
-            
-            <footer class="footer section">
-                <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
-            </footer>
-            <section class="popup-profile">
-                <div class="popup-profile__container">
-                    <button type="button" class="popup-profile__close-button" aria-label="Закрыть попап"></button>
-                    <h2 class="popup-profile__title">Редактировать профиль</h2>
-                    <form name="form-edit-profile" class="popup-profile__profile-edit">
-                        <input class="popup-profile__input" type="text" name="name" id="input_name" />
-                        <input class="popup-profile__input" type="text" name="job" id="input_job" />
-                        <button type="submit" class="popup-profile__save-button">Сохранить</button>
-                    </form>
-                </div>
-            </section>
-
-            <section class="popup-photo">   
-            <div class="popup-photo__container">
-                    <button type="button" class="popup-photo__close-button" aria-label="Закрыть попап"></button>
-                    <h2 class="popup-photo__title">Новое место</h2>
-                    <form name="form-edit-photo" class="popup-photo__edit">
-                        <input class="popup-photo__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
-                        <input class="popup-photo__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
-                        <button type="submit" class="popup-photo__save-button">Создать</button>
-                    </form>
-                </div>
-            </section>
-            <section class="popup-photo-click">   
-                <div class="popup-photo-click__container">
-                        <button type="button" class="popup-photo-click__close-button" aria-label="Закрыть попап"></button>
-                        <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup-photo-click__image"> 
-                        <h2 class="popup-photo-click__title">Архыз</h2>
-                        </form>
-                    </div>
-                </section>
-
-
-        </main>
-        <template class="card-template">
-            <div class="card">
-                <div class="card__photo-container">
-                <img class="card__image">
-                <img src="images/delete-button.svg" class="card__delete-button">
-                </div>
-                <div class="card__info">
-                    <h2 class="card__title">
-
-                    </h2>
-                    <img src="images/like.svg" class="card__like">
-                </div>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="pages/index.css" />
+      <title>Mesto</title>
+   </head>
+   <body class="root">
+      <header class="header section">
+         <img src="images/logo.svg" alt="Место" class="header__logo" />
+      </header>
+      <main class="content">
+         <section class="profile section">
+            <img src="images/jac.jpg" alt="Жак-Ив Кусто" class="profile__avatar" />
+            <div class="profile__info">
+               <div class="profile__name-container">
+                  <h1 class="profile__name">Жак-Ив Кусто</h1>
+                  <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
+               </div>
+               <p class="profile__job">Исследователь океана</p>
             </div>
-        </template>
-
-        <script src="scripts/main.js"></script>
-    </body>
+            <button type="button" class="profile__add-button" aria-label="Загрузить контент"></button>
+         </section>
+         <section class="elements section">
+         </section>
+         <footer class="footer section">
+            <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
+         </footer>
+         <section class="popup-profile">
+            <div class="popup-profile__container">
+               <button type="button" class="popup-profile__close-button" aria-label="Закрыть попап"></button>
+               <h2 class="popup-profile__title">Редактировать профиль</h2>
+               <form name="form-edit-profile" class="popup-profile__profile-edit">
+                  <input class="popup-profile__input" type="text" name="name" id="input_name" />
+                  <input class="popup-profile__input" type="text" name="job" id="input_job" />
+                  <button type="submit" class="popup-profile__save-button">Сохранить</button>
+               </form>
+            </div>
+         </section>
+         <section class="popup-photo">
+            <div class="popup-photo__container">
+               <button type="button" class="popup-photo__close-button" aria-label="Закрыть попап"></button>
+               <h2 class="popup-photo__title">Новое место</h2>
+               <form name="form-edit-photo" class="popup-photo__edit">
+                  <input class="popup-photo__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
+                  <input class="popup-photo__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
+                  <button type="submit" class="popup-photo__save-button">Создать</button>
+               </form>
+            </div>
+         </section>
+         <section class="popup-photo-click">
+            <div class="popup-photo-click__container">
+               <button type="button" class="popup-photo-click__close-button" aria-label="Закрыть попап"></button>
+               <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup-photo-click__image"> 
+               <h2 class="popup-photo-click__title">Архыз</h2>
+            </div>
+         </section>
+      </main>
+      <template class="card-template">
+         <div class="card">
+            <div class="card__photo-container">
+               <img class="card__image">
+               <img src="images/delete-button.svg" class="card__delete-button">
+            </div>
+            <div class="card__info">
+               <h2 class="card__title">
+               </h2>
+               <img src="images/like.svg" class="card__like">
+            </div>
+         </div>
+      </template>
+      <script src="scripts/main.js"></script>
+   </body>
 </html>
