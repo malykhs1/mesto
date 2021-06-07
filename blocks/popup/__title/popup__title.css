@@ -1,4 +1,4 @@
-.popup-photo__title {
+.popup__title {
     color: #000000;
     font-size: 24px;
     font-weight: 900;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 767px){
-    .popup-photo__title {  
+    .popup__title {  
     font-size: 18px;
     line-height: 22px;
     margin-top: 25px;

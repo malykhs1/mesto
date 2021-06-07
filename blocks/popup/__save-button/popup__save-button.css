@@ -1,4 +1,4 @@
-.popup-photo__save-button {
+.popup__save-button {
     margin-top: 37px;
     margin-bottom: 37px;
     width: 83%;
@@ -13,14 +13,14 @@
     font-weight: 400;
 }
 
-.popup-photo__save-button:hover {
+.popup__save-button:hover {
     opacity: 80%;
     cursor: pointer;
 }
 
 
 @media screen and (max-width: 767px){
-    .popup-photo__save-button {  
+    .popup__save-button {  
     font-size: 14px;
     min-height: 46px;
     line-height: 17px;

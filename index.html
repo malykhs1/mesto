@@ -27,7 +27,55 @@
          <footer class="footer section">
             <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
          </footer>
-         <section class="popup-profile">
+         <section class="popup" id="popup-profile">
+            <div class="popup__container popup__container_filling_form">
+               <button type="button" id="popup-profile-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
+               <h2 class="popup__title">Редактировать профиль</h2>
+               <form name="form-edit-profile" class="popup__form">
+                  <input class="popup__input" type="text" name="name" id="input_name" />
+                  <input class="popup__input" type="text" name="job" id="input_job" />
+                  <button type="submit" name="save-profile" class="popup__save-button">Сохранить</button>
+               </form>
+            </div>
+         </section>
+         <section class="popup popup_type_form" id="popup-card">
+            <div class="popup__container popup__container_filling_form">
+               <button type="button" id="popup-card-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
+               <h2 class="popup__title">Новое место</h2>
+               <form name="form-edit-card" id="form-edit-card" class="popup-form">
+                  <input class="popup__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
+                  <input class="popup__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
+                  <button type="submit" id="save-card" class="popup__save-button">Создать</button>
+               </form>
+            </div>
+         </section>
+         <section class="popup popup_type_image" id="popup-image">
+            <div class="popup__container popup__container_filling_image">
+               <button type="button" id="popup-photo-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
+               <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup__image"> 
+               <h2 class="popup__title_position_card">Архыз</h2>
+            </div>
+         </section>
+      </main>
+      <template class="card-template">
+         <div class="card">
+            <div class="card__photo-container">
+               <img class="card__image" alt="Место">
+               <img src="images/delete-button.svg" class="card__delete-button">
+            </div>
+            <div class="card__info">
+               <h2 class="card__title">
+               </h2>
+               <img src="images/like.svg" class="card__like">
+            </div>
+         </div>
+      </template>
+      <script src="scripts/main.js"></script>
+   </body>
+</html>
+
+
+<!-- <section class="popup-profile">
             <div class="popup-profile__container">
                <button type="button" class="popup-profile__close-button" aria-label="Закрыть попап"></button>
                <h2 class="popup-profile__title">Редактировать профиль</h2>
@@ -56,20 +104,4 @@
                <h2 class="popup-photo-click__title">Архыз</h2>
             </div>
          </section>
-      </main>
-      <template class="card-template">
-         <div class="card">
-            <div class="card__photo-container">
-               <img class="card__image" alt="Место">
-               <img src="images/delete-button.svg" class="card__delete-button">
-            </div>
-            <div class="card__info">
-               <h2 class="card__title">
-               </h2>
-               <img src="images/like.svg" class="card__like">
-            </div>
-         </div>
-      </template>
-      <script src="scripts/main.js"></script>
-   </body>
-</html>
+      -->
