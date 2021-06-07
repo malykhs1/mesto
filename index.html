@@ -30,7 +30,7 @@
          <section class="popup" id="popup-profile">
             <div class="popup__container popup__container_filling_form">
                <button type="button" id="popup-profile-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
-               <h2 class="popup__title">Редактировать профиль</h2>
+               <h2 class="popup__title popup__title_position_form">Редактировать профиль</h2>
                <form name="form-edit-profile" class="popup__form">
                   <input class="popup__input" type="text" name="name" id="input_name" />
                   <input class="popup__input" type="text" name="job" id="input_job" />
@@ -41,7 +41,7 @@
          <section class="popup popup_type_form" id="popup-card">
             <div class="popup__container popup__container_filling_form">
                <button type="button" id="popup-card-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
-               <h2 class="popup__title">Новое место</h2>
+               <h2 class="popup__title popup__title_position_form">Новое место</h2>
                <form name="form-edit-card" id="form-edit-card" class="popup-form">
                   <input class="popup__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
                   <input class="popup__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
@@ -53,7 +53,7 @@
             <div class="popup__container popup__container_filling_image">
                <button type="button" id="popup-photo-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup__image"> 
-               <h2 class="popup__title_position_card">Архыз</h2>
+               <h2 class="popup__title popup__title_position_card">Архыз</h2>
             </div>
          </section>
       </main>
@@ -73,35 +73,3 @@
       <script src="scripts/main.js"></script>
    </body>
 </html>
-
-
-<!-- <section class="popup-profile">
-            <div class="popup-profile__container">
-               <button type="button" class="popup-profile__close-button" aria-label="Закрыть попап"></button>
-               <h2 class="popup-profile__title">Редактировать профиль</h2>
-               <form name="form-edit-profile" class="popup-profile__profile-edit">
-                  <input class="popup-profile__input" type="text" name="name" id="input_name" />
-                  <input class="popup-profile__input" type="text" name="job" id="input_job" />
-                  <button type="submit" class="popup-profile__save-button">Сохранить</button>
-               </form>
-            </div>
-         </section>
-         <section class="popup-photo">
-            <div class="popup-photo__container">
-               <button type="button" class="popup-photo__close-button" aria-label="Закрыть попап"></button>
-               <h2 class="popup-photo__title">Новое место</h2>
-               <form name="form-edit-photo" class="popup-photo__edit">
-                  <input class="popup-photo__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
-                  <input class="popup-photo__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
-                  <button type="submit" class="popup-photo__save-button">Создать</button>
-               </form>
-            </div>
-         </section>
-         <section class="popup-photo-click">
-            <div class="popup-photo-click__container">
-               <button type="button" class="popup-photo-click__close-button" aria-label="Закрыть попап"></button>
-               <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup-photo-click__image"> 
-               <h2 class="popup-photo-click__title">Архыз</h2>
-            </div>
-         </section>
-      -->
