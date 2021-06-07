@@ -1,11 +1,11 @@
-.popup__title_position_card { 
-    font-size: 12px; 
-    line-height: 14px; 
-    font-weight: 400; 
-    margin: 0; 
-    margin-top: 10px; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    max-width: 300px; 
-    overflow: hidden; 
-} 
+.popup__title_position_card {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 300px;
+    overflow: hidden;
+}
