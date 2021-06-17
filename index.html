@@ -27,28 +27,35 @@
          <footer class="footer section">
             <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
          </footer>
+
          <section class="popup" id="popup-profile">
             <div class="popup__container popup__container_filling_form">
                <button type="button" id="popup-profile-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
                <h2 class="popup__title popup__title_position_form">Редактировать профиль</h2>
-               <form name="form-edit-profile" class="popup__form">
-                  <input class="popup__input" type="text" name="name" id="input_name" />
-                  <input class="popup__input" type="text" name="job" id="input_job" />
-                  <button type="submit" name="save-profile" class="popup__save-button">Сохранить</button>
+               <form name="form-edit-profile" class="popup__form" novalidate>
+                  <input class="popup__input" type="text" name="name" id="input_name" minlength="2" maxlength="40" required/>
+                  <span class="popup__input-error error" id="input_name-error"></span>
+                  <input class="popup__input" type="text" name="job" id="input_job" minlength="2" maxlength="400" required/>
+                  <span class="popup__input-error error" id="input_job-error"></span>
+                  <button type="submit" name="save-profile" class="popup__save-button popup__save-button-valid" disabled>Сохранить</button>
                </form>
             </div>
          </section>
+        
          <section class="popup popup_type_form" id="popup-card">
             <div class="popup__container popup__container_filling_form">
                <button type="button" id="popup-card-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
                <h2 class="popup__title popup__title_position_form">Новое место</h2>
-               <form name="form-edit-card" id="form-edit-card" class="popup-form">
-                  <input class="popup__input" placeholder='Название' type="text" name="name" id="input_photo-name" />
-                  <input class="popup__input" placeholder='Ссылка на картинку' type="text" name="job" id="input_photo-link" />
-                  <button type="submit" id="save-card" class="popup__save-button">Создать</button>
+               <form name="form-edit-card" id="form-edit-card" class="popup__form" novalidate>
+                  <input class="popup__input" placeholder='Название' type="text" name="name" id="input_photo-name" minlength="2" maxlength="30" required/>
+                  <span class="input_photo-name-error popup__input-error" id="input_photo-name-error"></span>
+                  <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="job" id="input_photo-link" required/>
+                  <span class="input_photo-link-error popup__input-error" id="input_photo-link-error"></span>
+                  <button type="submit" id="save-card" class="popup__save-button popup__save-button-valid" disabled>Создать</button>
                </form>
             </div>
          </section>
+
          <section class="popup popup_type_image" id="popup-image">
             <div class="popup__container popup__container_filling_image">
                <button type="button" id="popup-photo-close-button" class="popup__close-button" aria-label="Закрыть попап"></button>
@@ -70,6 +77,7 @@
             </div>
          </div>
       </template>
+      <script src="scripts/validation.js"></script>
       <script src="scripts/main.js"></script>
    </body>
 </html>
