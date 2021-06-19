@@ -6,6 +6,7 @@ const nameEdit = document.getElementById('input_name');
 const jobEdit = document.getElementById('input_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
+const submitButton = document.getElementById('save-card');
 // добавляем картинку
 const popupCard = document.getElementById('popup-card')
 const photoEditButton = document.querySelector('.profile__add-button')
@@ -18,59 +19,49 @@ const popupPhoto = document.getElementById('popup-image');
 const popupPhotoClickImage = document.querySelector('.popup__image');
 const popupPhotoClickTitle = document.querySelector('.popup__title_position_card');
 const popupPhotoCloseButton = document.getElementById('popup-photo-close-button');
-//все попапы 
-const popupList = document.querySelectorAll('popup');
 
 
 //открытие и закрытие попапа 
 
 function openPopup(popup) {
 	popup.classList.add('popup_opened');
+	document.addEventListener('keydown', closeByEscape);
   }
 
   function closePopup (popup) {
 	popup.classList.remove('popup_opened');
+	document.removeEventListener('keydown', closeByEscape);
   }
+
+  function closeByEscape (evt) {
+	  if (evt.key === 'Escape') {
+		  const openedPopup = document.querySelector('.popup_opened');
+		  closePopup(openedPopup);
+	  }
+  }
+
+  function closeByOverlay (evt) {
+	  if (evt.target === evt.currentTarget) {
+		const openedPopup = document.querySelector('.popup_opened');
+		  closePopup(openedPopup);
+		 	}
+	   }
 // отправка данных попапов
 
 function handleButtonEditPfofile () {
 	nameEdit.value = profileName.textContent;
 	jobEdit.value = profileJob.textContent;
 	openPopup (popupProfile);
-	document.addEventListener ('keydown', (event) => { 
-		if (event.key === 'Escape') {
-		  closePopup(popupProfile);
-		}
-	  });
-	  popupProfile.addEventListener('click', (event)=> {
-		if(event.target === event.currentTarget) {
-		  closePopup(popupProfile);
-		}
-	  })
 }
 
-function handleButtonPhotoEdit () {
-	openPopup(popupCard);
-	document.addEventListener ('keydown', (event) => { 
-		if (event.key === 'Escape') {
-		  closePopup(popupCard);
-		}
-	  });
-	  popupCard.addEventListener('click', (event)=> {
-		if(event.target === event.currentTarget) {
-		  closePopup(popupCard);
-		}
-	  })
-}
-
-function SubmitProfileForm(evt) {
+function submitProfileForm(evt) {
 	evt.preventDefault();
 	profileName.textContent = nameEdit.value;
 	profileJob.textContent = jobEdit.value;
 	closePopup (popupProfile);
 }
 
-function SubmitCardForm(evt) {
+function submitCardForm(evt) {
 	evt.preventDefault();
 	addCard(cardList,createCard(cardLinkEdit.value, cardNameEdit.value)); 
 	closePopup(popupCard);
@@ -111,6 +102,10 @@ function createCard (link, title) {
 
 function addCard (cardList, cardElement) {
 	cardList.prepend(cardElement);
+	cardNameEdit.value = '';
+	cardLinkEdit.value = '';
+	submitButton.setAttribute('disabled', 'disabled');
+	submitButton.classList.add('popup__save-button-unvalid');
 }
 
 //работаем с массивом
@@ -129,21 +124,14 @@ function deleteCard(evt) {
 }
 
 function openPhotoPopup(evt) {
-	popupPhotoClickImage.src = evt.target.closest('.card__image').src;
-	popupPhotoClickTitle.textContent = evt.target.closest('.card').querySelector('.card__title').textContent;
+	const cardImage = evt.target.closest('.card__image');
+	popupPhotoClickImage.src = cardImage.src;
+	popupPhotoClickTitle.textContent = cardImage.alt;
 	openPopup(popupPhoto)
-	document.addEventListener ('keydown', (event) => { 
-		if (event.key === 'Escape') {
-		  closePopup(popupPhoto);
-		}
-	  });
-	  popupPhoto.addEventListener('click', (event)=> {
-		if(event.target === event.currentTarget) {
-		  closePopup(popupPhoto);
-		}
-	  })
 }
+
 initialCardElements();
+
 // слушатели
 function cardElementsListeners(element) {
 	element.querySelector('.card__delete-button').addEventListener('click', deleteCard);
@@ -153,11 +141,14 @@ function cardElementsListeners(element) {
 
 
 profileEditButton.addEventListener ('click', handleButtonEditPfofile);
-popupProfile.addEventListener('submit',  SubmitProfileForm);
+popupProfile.addEventListener('submit',  submitProfileForm);
+popupProfile.addEventListener('click',  closeByOverlay);
 closePopupProfileButton.addEventListener('click', () => closePopup(popupProfile));
 
 popupCardCloseButton.addEventListener('click', () => closePopup(popupCard));
-photoEditButton.addEventListener('click', handleButtonPhotoEdit);
-popupCard.addEventListener('submit', SubmitCardForm);
+photoEditButton.addEventListener('click', () => openPopup(popupCard));
+popupCard.addEventListener('submit', submitCardForm);
+popupCard.addEventListener('click', closeByOverlay);
 
 popupPhotoCloseButton.addEventListener('click', () => closePopup(popupPhoto));
+popupPhoto.addEventListener('click', closeByOverlay);
