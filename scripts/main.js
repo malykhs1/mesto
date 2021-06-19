@@ -2,8 +2,8 @@
 const popupProfile = document.getElementById('popup-profile')
 const profileEditButton = document.querySelector('.profile__edit-button');
 const closePopupProfileButton = document.getElementById('popup-profile-close-button'); 
-const nameEdit = document.getElementById('input_name');
-const jobEdit = document.getElementById('input_job');
+const nameEdit = document.getElementById('popup__input_name');
+const jobEdit = document.getElementById('popup__input_job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 const submitButton = document.getElementById('save-card');
@@ -11,8 +11,8 @@ const submitButton = document.getElementById('save-card');
 const popupCard = document.getElementById('popup-card')
 const photoEditButton = document.querySelector('.profile__add-button')
 const popupCardCloseButton = document.getElementById('popup-card-close-button');
-const cardNameEdit = document.getElementById('input_photo-name');
-const cardLinkEdit = document.getElementById('input_photo-link');
+const cardNameEdit = document.getElementById('popup__input_photo-name');
+const cardLinkEdit = document.getElementById('popup__input_photo-link');
 
 // кликаем по фотке
 const popupPhoto = document.getElementById('popup-image');
