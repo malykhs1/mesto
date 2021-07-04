@@ -75,8 +75,8 @@ function handleButtonAddcard() {
 	openPopup(popupCard);
 	cardNameEdit.value = '';
 	cardLinkEdit.value = '';
-	submitButton.setAttribute('disabled', 'disabled');
-	submitButton.classList.add('popup__save-button-unvalid');
+	const unactiveButton = new FormValidator(enableValidation, formCard);
+	unactiveButton.disableSubmitButton();
 }
 
 function submitCardForm(evt) {
