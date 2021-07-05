@@ -1,3 +1,5 @@
+//Батырбек, большое спасибо за ревью. Иногда из виду уходят очевидные вещи. В моменты, когда тебе указывают на ошибку, я дико кайфую(если ошибок не слишком уж огромное количество). Еще раз спасибо. 
+
 import FormValidator from '../scripts/FormValidator.js';
 import Card from '../scripts/Card.js';
 import {
@@ -75,8 +77,8 @@ function handleButtonAddcard() {
 	openPopup(popupCard);
 	cardNameEdit.value = '';
 	cardLinkEdit.value = '';
-	const unactiveButton = new FormValidator(enableValidation, formCard);
-	unactiveButton.disableSubmitButton();
+	const validationCardForm = new FormValidator(enableValidation, formCard);
+	validationCardForm.disableSubmitButton();
 }
 
 function submitCardForm(evt) {
