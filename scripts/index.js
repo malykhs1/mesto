@@ -77,7 +77,6 @@ function handleButtonAddcard() {
 	openPopup(popupCard);
 	cardNameEdit.value = '';
 	cardLinkEdit.value = '';
-	const validationCardForm = new FormValidator(enableValidation, formCard);
 	validationCardForm.disableSubmitButton();
 }
 
