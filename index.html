@@ -31,13 +31,13 @@
          <p class="footer__copyright">© 2020 Mesto Russia by Alex Malykh</p>
       </footer>
 
-      <section class="popup" id="popup-profile">
+      <section class="popup popup_type_id" id="popup-profile">
          <div class="popup__container popup__container_filling_form">
             <button type="button" id="popup-profile-close-button" class="popup__close-button"
                aria-label="Закрыть попап"></button>
             <h2 class="popup__title popup__title_position_form">Редактировать профиль</h2>
             <form name="form-edit-profile" id="form-edit-profile" class="popup__form" novalidate>
-               <input class="popup__input" type="text" name="name" id="input-name" minlength="2" maxlength="40"
+               <input class="popup__input" type="text" name="surname" id="input-name" minlength="2" maxlength="40"
                   required />
                <span class="input-name-error" id="input_name-error"></span>
                <input class="popup__input" type="text" name="job" id="input-job" minlength="2" maxlength="400"
@@ -58,7 +58,7 @@
                <input class="popup__input" placeholder='Название' type="text" name="name" id="input-photo-name"
                   minlength="2" maxlength="30" required />
                <span class="input-photo-name-error"></span>
-               <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="job" id="input-photo-link"
+               <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="link" id="input-photo-link"
                   required />
                <span class="input-photo-link-error"></span>
                <button type="submit" id="save-card" class="popup__save-button popup__save-button-unvalid"
@@ -71,8 +71,7 @@
          <div class="popup__container popup__container_filling_image">
             <button type="button" id="popup-photo-close-button" class="popup__close-button"
                aria-label="Закрыть попап"></button>
-            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка"
-               class="popup__image">
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup__image">
             <h2 class="popup__title popup__title_position_card">Архыз</h2>
          </div>
       </section>
@@ -92,5 +91,4 @@
    </template>
    <script type="module" src="scripts/index.js"></script>
 </body>
-
 </html>
