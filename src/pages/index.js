@@ -6,50 +6,22 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/Userinfo.js';
 import '../pages/index.css';
 
-
 import {
-	enableValidation
-} from '../components/validationList.js';
-
-// редактирование профиля
-const popupProfile = document.querySelector('.popup_type_id');
-const formProfile = document.getElementById('form-edit-profile')
-const profileEditButton = document.querySelector('.profile__edit-button');
-const nameEdit = document.getElementById('input-name');
-const jobEdit = document.getElementById('input-job');
-const profileName = document.querySelector('.profile__name');
-const profileJob = document.querySelector('.profile__job');
-// добавляем картинку
-const formCard = document.getElementById('form-edit-card')
-const popupCard = document.querySelector('.popup_type_form')
-const photoEditButton = document.querySelector('.profile__add-button')
-
-
-// кликаем по фотке
-const popupPhoto = document.querySelector('.popup_type_image');
-
-
-// определяем массив
-const cardList = document.querySelector('.elements');
-const initialCards = [{
-	name: 'Архыз',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, {
-	name: 'Челябинская область',
-	link: 'https://mir-tourista.ru/wp-content/uploads/2019/12/resortimagehandler.jpg'
-}, {
-	name: 'Иваново',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-}, {
-	name: 'Камчатка',
-	link: 'https://photocentra.ru/images/main45/456443_main.jpg'
-}, {
-	name: 'Холмогорский район',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-}, {
-	name: 'Байкал',
-	link: 'https://etcomp.ru/templates/g5_helium/images/baikal/3r.jpg'
-}];
+	enableValidation,
+	popupProfile,
+	formProfile,
+	profileEditButton,
+	nameEdit,
+	jobEdit,
+	profileName,
+	profileJob,
+	formCard,
+	popupCard,
+	photoEditButton,
+	popupPhoto,
+	cardList,
+	initialCards,
+} from '../utils/constants.js';
 
 
 //рендерит карточки из массива 
@@ -79,7 +51,7 @@ function handleButtonAddcard() {
 
 //нажатие формы создания карточки
 function handleCardCreate(item) {
-	cardList.prepend(createNewElement(item));
+	renderItems.setItem(createNewElement(item));
 	popupTypeCard.close();
 }
 
