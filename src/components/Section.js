@@ -1,18 +1,15 @@
 export default class Section {
-    constructor ({ data, renderer}, cardSelector) {
-        this._renderedItems = data;
+    constructor ({ items, renderer }, cardSelector) {
+        this._renderedItems = items; 
         this._renderer = renderer;
         this._cardSelector = cardSelector;
-        
-    }
-
-    setItem(element) {
-        this._cardSelector.prepend(element); //метод, который добавляет в разметку
     }
 
     renderItems() {
-        this._renderedItems.forEach(cards => {
-        this._renderer(cards);
-    });
+        this._renderedItems.forEach(item => this._renderer(item));
+    }
+
+    setItem(item) {
+        this._cardSelector.prepend(item); 
     }
 }

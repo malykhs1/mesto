@@ -13,13 +13,16 @@
    </header>
    <main class="content">
       <section class="profile section">
-         <img src="<%=require('./images/jac.jpg')%>" alt="Жак-Ив Кусто" class="profile__avatar" />
+         <div class="profile__avatar">
+            <img src="<%=require('./images/jac.jpg')%>" alt="Фото пользователя" class="profile__avatar" />
+            <button type="button" class="profile__avatar-button" aria-label="Загрузить контент"></button>
+         </div>
          <div class="profile__info">
             <div class="profile__name-container">
-               <h1 class="profile__name">Жак-Ив Кусто</h1>
+               <h1 class="profile__name"></h1>
                <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
             </div>
-            <p class="profile__job">Исследователь океана</p>
+            <p class="profile__job"></p>
          </div>
          <button type="button" class="profile__add-button" aria-label="Загрузить контент"></button>
       </section>
@@ -36,14 +39,28 @@
                aria-label="Закрыть попап"></button>
             <h2 class="popup__title popup__title_position_form">Редактировать профиль</h2>
             <form name="form-edit-profile" id="form-edit-profile" class="popup__form" novalidate>
-               <!--А зачем здесь атрибут placeholder, если он не используется? Мы всегда же в инпутах отображаем данные из html?-->
-               <input class="popup__input" type="text" name="surname" id="input-name" minlength="2" maxlength="40"
+               <input class="popup__input" type="text" name="name" id="name" minlength="2" maxlength="40"
                   required />
-               <span class="input-name-error" id="input_name-error"></span>
-               <input class="popup__input" type="text" name="job" id="input-job" minlength="2" maxlength="400"
+               <span class="name-error" id="name-error"></span>
+               <input class="popup__input" type="text" name="job" id="job" minlength="2" maxlength="400"
                   required />
-               <span class="input-job-error" id="input_job-error"></span>
+               <span class="job-error" id="job-error"></span>
                <button type="submit" name="save-profile" class="popup__save-button popup__save-button-unvalid"
+                  disabled>Сохранить</button>
+            </form>
+         </div>
+      </section>
+
+      <section class="popup popup_type_avatar" id="popup-avatar">
+         <div class="popup__container popup__container_filling_avatar">
+            <button type="button" id="popup-avatar-close-button" class="popup__close-button"
+               aria-label="Закрыть попап"></button>
+            <h2 class="popup__title popup__title_position_form">Обновить аватар</h2>
+            <form name="form-edit-avatar" id="form-edit-avatar" class="popup__form" novalidate>
+               <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="avatar"
+                  id="avatar" required />
+               <span class="avatar-error"></span>
+               <button type="submit" id="save-card" class="popup__save-button popup__save-button-unvalid"
                   disabled>Сохранить</button>
             </form>
          </div>
@@ -55,12 +72,12 @@
                aria-label="Закрыть попап"></button>
             <h2 class="popup__title popup__title_position_form">Новое место</h2>
             <form name="form-edit-card" id="form-edit-card" class="popup__form" novalidate>
-               <input class="popup__input" placeholder='Название' type="text" name="name" id="input-photo-name"
+               <input class="popup__input" placeholder='Название' type="text" name="title" id="title"
                   minlength="2" maxlength="30" required />
-               <span class="input-photo-name-error"></span>
-               <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="link" id="input-photo-link"
+               <span class="title-error"></span>
+               <input class="popup__input" placeholder='Ссылка на картинку' type="url" name="link" id="link"
                   required />
-               <span class="input-photo-link-error"></span>
+               <span class="link-error"></span>
                <button type="submit" id="save-card" class="popup__save-button popup__save-button-unvalid"
                   disabled>Создать</button>
             </form>
@@ -71,12 +88,23 @@
          <div class="popup__container popup__container_filling_image">
             <button type="button" id="popup-photo-close-button" class="popup__close-button"
                aria-label="Закрыть попап"></button>
-            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка" class="popup__image">
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Картинка"
+               class="popup__image">
             <h2 class="popup__title popup__title_position_card">Архыз</h2>
          </div>
       </section>
+
+      <section class="popup popup_type_confirm" id="popup-confirm">
+         <div class="popup__container popup__container_filling_confirm">
+            <button type="button" id="popup-confirm-close-button" class="popup__close-button"
+               aria-label="Закрыть попап"></button>
+            <h2 class="popup__title popup__title_position_form">Вы уверены?</h2>
+            <button type="submit" id="save-card" class="popup__save-button">Да</button>
+         </div>
+      </section>
+
    </main>
-   <template class="card-template">
+   <template class="card-template" id="card-template">
       <div class="card">
          <div class="card__photo-container">
             <img class="card__image" alt="Место">
@@ -85,10 +113,13 @@
          <div class="card__info">
             <h2 class="card__title">
             </h2>
+            <div class="card__like-place">
             <img src="<%=require('./images/like.svg')%>" class="card__like">
+            <p class="card__likes-counter"></p>
+            </div>
          </div>
       </div>
    </template>
-   <script type="module" src="scripts/index.js"></script>
 </body>
+
 </html>
