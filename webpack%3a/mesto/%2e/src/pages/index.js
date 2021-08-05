@@ -27,7 +27,6 @@ import {
 	popupPhoto,
 	cardPlaces,
 	formAvatar,
-	initialCards,
 } from '../utils/constants.js';
 
 const api = new Api({
@@ -62,9 +61,14 @@ api.getUserInfo()
 const popupWithImage = new PopupWithImage(popupPhoto);
 popupWithImage.setEventListeners();
 
+//Попап конфирм
+const popupTypeConfirm = new PopupConfirm(popupConfirm)
+popupTypeConfirm.setEventListeners();
+
 // функции удаления карточки, которую я вызову в коллбеке
 function handleDeleteButton(card) {
 	popupTypeConfirm.open();
+			debugger;
 	popupTypeConfirm.setNewHandler(() => {
 	  popupTypeConfirm.renderButtonText(true);
 	  api.deleteCardRequest(card.getCardId())
@@ -187,10 +191,6 @@ popupTypeAvatar.setEventListeners();
 
 // экземпляр класса Userinfo
 const userInfo = new UserInfo(name, job, avatar);
-
-//Попап конфирм
-const popupTypeConfirm = new PopupConfirm(popupConfirm)
-popupTypeConfirm.setEventListeners();
 
 
 //листенеры
