@@ -61,6 +61,35 @@ api.getUserInfo()
 
 const popupWithImage = new PopupWithImage(popupPhoto);
 popupWithImage.setEventListeners();
+
+//Попап конфирм
+const popupTypeConfirm = new PopupConfirm(popupConfirm)
+popupTypeConfirm.setEventListeners();
+
+// функции удаления карточки, которую я вызову в коллбеке
+function handleDeleteButton(card) {
+	popupTypeConfirm.open();
+	popupTypeConfirm.setNewHandler(() => {
+	  popupTypeConfirm.renderButtonText(true);
+	  api.deleteCardRequest(card.getCardId())
+		.then(() => {
+		  card.deleteCard();
+		  popupTypeConfirm.close();
+		})
+		.catch((error) => {
+		  console.log(error)
+		})
+		.finally(() => {
+		  popupTypeConfirm.renderButtonText(false);
+		})
+	});
+  }
+
+//открытие попапа с картинками
+function handleCardClick(title, link) {
+	popupWithImage.open(title, link)
+}
+
 //функция добавления карточек
 function createNewElement(data) {
 	const card = new Card({
@@ -68,17 +97,11 @@ function createNewElement(data) {
 		cardSelector: '#card-template',
 		userId: userId,
 		handlers: {
-			handleCardClick: (title, link) => {
-				popupWithImage.open(title, link)
-			},
 			handleLikeClick: (cardId, isLiked) => {
 				return api.likeCard(cardId, isLiked)
 			},
-			handleDeleteIconClick: (cardObject) => {
-				popupConfirm.cardObject = cardObject;
-				popupTypeConfirm.open();
-				
-			}
+			handleCardClick: handleCardClick,
+			handleDeleteButton: () => handleDeleteButton(card),
 		}
 	})
 	const cardElement = card.generateCard()
@@ -166,32 +189,8 @@ const popupTypeAvatar = new PopupWithForm({
 })
 popupTypeAvatar.setEventListeners();
 
-
-
-
-//Попап конфирм
-const popupTypeConfirm = new PopupConfirm({
-	popupSelector: popupConfirm,
-	handleDeleteSubmitClick:  () => {
-	  const cardId = popupTypeConfirm.cardObject._cardId;
-	  api.deleteCard(cardId)
-		.then(() => {
-		  popupTypeConfirm.cardObject.deleteCard();
-		  popupTypeConfirm.close();
-		  popupTypeConfirm.cardObject = '';
-		})
-		.catch(err => {
-		  console.log(err);
-		})
-	}
-  })
-popupTypeConfirm.setEventListeners();
-
-
 // экземпляр класса Userinfo
 const userInfo = new UserInfo(name, job, avatar);
-
-
 
 
 //листенеры

@@ -11,7 +11,7 @@ export default class Card {
 		//блок хэндлеров карточки
 		this._handleCardClick = handlers.handleCardClick;
 		this._handleLikeClick = handlers.handleLikeClick;
-		this._handleDeleteIconClick = handlers.handleDeleteIconClick;
+		this._handleDeleteButton = handlers.handleDeleteButton;
 	}
 
 	getCardId() {
@@ -48,13 +48,6 @@ export default class Card {
 	updateLikes = (card) => {
 		this._likesCounter.textContent = this._likes.length
 	}
-
-
-	deleteCard = () => {
-		this._element.remove();
-		this._element = null;
-	}
-
 	_deleteCheck = () => { //метод проверит собственника карточки и даст удалить карточку только ее владельцу
 		if (this._userId !== this._ownerId) {
 			this._deleteButton.classList.add('card__delete-button_hiden')
@@ -70,7 +63,7 @@ export default class Card {
 		});
 
 		this._deleteButton.addEventListener('click', () => {
-			this._handleDeleteIconClick(this._cardId)
+			this._handleDeleteButton()
 		});
 
 		this._cardImage.addEventListener('click', () => {
@@ -91,5 +84,10 @@ export default class Card {
 		this._deleteCheck()
 		this._setEventListeners();
 		return this._element;
+	}
+
+	deleteCard = () => {
+		this._element.remove();
+		this._element = null;
 	}
 }

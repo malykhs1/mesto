@@ -80,7 +80,7 @@ export default class Api {
     }
 
     //удаляем карточку
-    deleteCard(cardId) {
+    deleteCardRequest(cardId) {
         return fetch(`${this._url}/cards/${cardId}`, {
                 method: "DELETE",
                 headers: this._headers,
