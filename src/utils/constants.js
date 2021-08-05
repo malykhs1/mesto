@@ -39,22 +39,3 @@ export const cardLike = document.querySelector('.card__like');
 
 // определяем массив
 export const cardPlaces = document.querySelector('.elements');
-export const initialCards = [{
-	name: 'Архыз',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, {
-	name: 'Челябинская область',
-	link: 'https://mir-tourista.ru/wp-content/uploads/2019/12/resortimagehandler.jpg'
-}, {
-	name: 'Иваново',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-}, {
-	name: 'Камчатка',
-	link: 'https://photocentra.ru/images/main45/456443_main.jpg'
-}, {
-	name: 'Холмогорский район',
-	link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-}, {
-	name: 'Байкал',
-	link: 'https://etcomp.ru/templates/g5_helium/images/baikal/3r.jpg'
-}];

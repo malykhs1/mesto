@@ -27,7 +27,6 @@ import {
 	popupPhoto,
 	cardPlaces,
 	formAvatar,
-	initialCards,
 } from '../utils/constants.js';
 
 const api = new Api({
@@ -37,18 +36,25 @@ const api = new Api({
 		"authorization": "b22e628d-a32e-4f98-97fa-aa25d8506b10",
 	},
 });
-//Обновление кнопки при ожидании ответа от сервера
-function renderLoading(popupSelector, isLoading) {
-	const submitButton = popupSelector.querySelector('.popup__save-button');
-	if(isLoading) {
-	  submitButton.textContent = 'Сохранение...'
-	}
-	else {
-	  submitButton.textContent = 'Сохранить'
-	}
-  }
 
-//загрузка данных юзера с сервера
+//Инициализация карточек с сервера
+let cardList
+api.getServerCards()
+	.then((data) => {
+		cardList = new Section({
+			items: data,
+			renderer: (item) => {
+				const cardElement = createNewElement(item);
+				cardList.setItem(cardElement);
+			}
+		}, cardPlaces);
+		cardList.renderItems();
+	})
+	.catch((error) => { 
+		console.log(error);
+	})
+
+//Обработка данных юзера
 let userId;
 api.getUserInfo()
 	.then((data) => {
@@ -59,8 +65,16 @@ api.getUserInfo()
 		console.log(error);
 	})
 
-const popupWithImage = new PopupWithImage(popupPhoto);
-popupWithImage.setEventListeners();
+//Обновление кнопки при ожидании ответа от сервера
+function renderLoading(popupSelector, isLoading) {
+	const submitButton = popupSelector.querySelector('.popup__save-button');
+	if(isLoading) {
+	  submitButton.textContent = 'Сохранение...'
+	}
+	else {
+	  submitButton.textContent = 'Сохранить'
+	}
+  }
 
 // функции удаления карточки, которую я вызову в коллбеке
 function handleDeleteButton(card) {
@@ -105,24 +119,6 @@ function createNewElement(data) {
 	card.updateLikes(cardElement);
 	return cardElement
 }
-
-//получение карточек с сервера
-let cardList
-api.getServerCards()
-	.then((data) => {
-		cardList = new Section({
-			items: data,
-			renderer: (item) => {
-				const cardElement = createNewElement(item);
-				cardList.setItem(cardElement);
-			}
-		}, cardPlaces);
-		cardList.renderItems();
-	})
-	.catch((error) => { //отлавливаю ошибку именно здесь, чтобы не сломать код
-		console.log(error);
-	})
-
 
 //Попап добавления карточки
 const popupTypeCard = new PopupWithForm({
@@ -192,6 +188,10 @@ const userInfo = new UserInfo(name, job, avatar);
 const popupTypeConfirm = new PopupConfirm(popupConfirm)
 popupTypeConfirm.setEventListeners();
 
+//Попак клика на картинку
+const popupWithImage = new PopupWithImage(popupPhoto);
+popupWithImage.setEventListeners();
+
 
 //листенеры
 photoEditButton.addEventListener('click', function () {
@@ -212,7 +212,6 @@ profileAvatarButton.addEventListener('click', function () {
 //валидация попапов
 const validationProfileForm = new FormValidator(enableValidation, formProfile);
 validationProfileForm.enableValidation();
-
 
 const validationCardForm = new FormValidator(enableValidation, formCard);
 validationCardForm.enableValidation();
