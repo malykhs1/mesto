@@ -3,8 +3,8 @@ export default class PopupConfirm extends Popup {
     
     constructor(popupSelector) {
         super(popupSelector);
-        this._popupForm = this._popupSelector.querySelector('.popup__form');
-        this._confirmButton = this._popupSelector.querySelector('.popup__save-button')
+        this._popupForm = this._popup.querySelector('.popup__form');
+        this._confirmButton = this._popup.querySelector('.popup__save-button')
       }
     
       setEventListeners() {
