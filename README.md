@@ -12,7 +12,7 @@
 
 3.После этого будут доступны следующие команды из терминала: npm run dev (запустить проект локально в браузере по умолчанию), npm run build (соберёт проект в папке dist).
  ### ⚙️  Стек технологий:
-JavaScript: ООП, classes, fetch, promises, api.
+JavaScript: ООП, classes, fetch, promises, api.  
 <img src="https://img.icons8.com/color/38/000000/javascript--v1.png"/>
 
 HTML. Семантическая вёрстка.  
