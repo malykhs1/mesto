@@ -24,7 +24,7 @@ HTML. Семантическая вёрстка.
  BEM nested.  
  <img src="https://img.icons8.com/office/30/000000/plugin.png"/>
  
- Webpack. Настройка обработки HTML, CSS, images, fonts Babel.
+ Webpack. Настройка обработки HTML, CSS, images, fonts Babel.  
 <img src="https://img.icons8.com/color/48/000000/webpack.png"/> <img src="https://img.icons8.com/dusk/38/000000/babel.png"/>
 
 Figma.  
