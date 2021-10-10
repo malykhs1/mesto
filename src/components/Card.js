@@ -8,7 +8,6 @@ export default class Card {
 		this._userId = userId;
 		this._cardSelector = cardSelector;
 
-		//блок хэндлеров карточки
 		this._handleCardClick = handlers.handleCardClick;
 		this._handleLikeClick = handlers.handleLikeClick;
 		this._handleDeleteButton = handlers.handleDeleteButton;
@@ -38,7 +37,6 @@ export default class Card {
 		})
 	}
 
-	//логика клика на лайк пользователем
 	likeCardClickByUser = (card) => {
 		if (this._likes.some(person => person._id === this._userId)) {
 			this._likeButton.classList.add('card__like_active');
@@ -48,7 +46,7 @@ export default class Card {
 	updateLikes = (card) => {
 		this._likesCounter.textContent = this._likes.length
 	}
-	_deleteCheck = () => { //метод проверит собственника карточки и даст удалить карточку только ее владельцу
+	_deleteCheck = () => {
 		if (this._userId !== this._ownerId) {
 			this._deleteButton.classList.add('card__delete-button_hiden')
 		} else {

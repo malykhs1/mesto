@@ -1,4 +1,3 @@
-//блок catch должен быть не в апи, а в индексе при вызове метода. 
 export default class Api {
     constructor(config) {
         this._url = config.url;
@@ -12,7 +11,6 @@ export default class Api {
         return Promise.reject(`Ошибка ${res.status}`);
     }
 
-    // загружаем карточки с сервера
     getServerCards() {
         return fetch(`${this._url}/cards`, {
                 method: "GET",
@@ -21,7 +19,6 @@ export default class Api {
             .then(this._checkResponse);
     }
 
-    //подгружаем данные пользователя с сервера
     getUserInfo() {
         return fetch(`${this._url}/users/me`, {
                 method: 'GET',
@@ -31,8 +28,7 @@ export default class Api {
     }
 
    
-    //добавляем новую карточку
-    addNewCard(name, link) { //никак не связаны с инпутами?
+    addNewCard(name, link) { 
         return fetch(`${this._url}/cards`, {
                 method: "POST",
                 headers: this._headers,
@@ -44,7 +40,6 @@ export default class Api {
             .then(this._checkResponse);
     }
 
-     //обновляем данные пользователя на серваке
      setUserInfo(name, job) {
         return fetch(`${this._url}/users/me`, {
                 method: 'PATCH',
@@ -58,7 +53,6 @@ export default class Api {
     }
 
 
- //обновляем аватар пользователя
     setAvatar(avatar) {
         return fetch(`${this._url}/users/me/avatar`, {
                 method: 'PATCH',
@@ -70,7 +64,6 @@ export default class Api {
             .then(this._checkResponse);
     }
 
-    //лайкаем карточку
     likeCard(cardId, isLiked) {
         return fetch(`${this._url}/cards/likes/${cardId}`, {
                 method: isLiked ? "DELETE" : "PUT",
@@ -79,7 +72,6 @@ export default class Api {
             .then(this._checkResponse);
     }
 
-    //удаляем карточку
     deleteCardRequest(cardId) {
         return fetch(`${this._url}/cards/${cardId}`, {
                 method: "DELETE",
